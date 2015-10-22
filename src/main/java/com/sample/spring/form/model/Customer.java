@@ -12,6 +12,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.sample.spring.form.validator.Password;
 import com.sample.spring.form.validator.Phone;
 
 public class Customer {
@@ -34,6 +35,9 @@ public class Customer {
     
     @Phone
     private String phone;
+    
+    @Password
+    private String password;
     
     public enum Gender {
 		MALE, FEMALE
@@ -85,6 +89,14 @@ public class Customer {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

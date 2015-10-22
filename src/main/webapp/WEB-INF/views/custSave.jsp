@@ -55,6 +55,11 @@
 				<td><springForm:errors path="phone" cssClass="error" /></td>
 			</tr>
 			<tr>
+				<td>Password:</td>
+				<td><springForm:password path="password" /></td>
+				<td><springForm:errors path="password" cssClass="error" /></td>
+			</tr>
+			<tr>
 				<td colspan="3"><input type="submit" value="Save Customer"></td>
 			</tr>
 		</table>

@@ -18,12 +18,11 @@ import com.sample.spring.form.model.Customer;
 @Controller
 public class CustomerController {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(CustomerController.class);
-	
+	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
+
 	private Map<String, Customer> customers = null;
-	
-	public CustomerController(){
+
+	public CustomerController() {
 		customers = new HashMap<String, Customer>();
 	}
 
@@ -35,9 +34,7 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/cust/save.do", method = RequestMethod.POST)
-	public String saveCustomerAction(
-			@Valid Customer customer,
-			BindingResult bindingResult, Model model) {
+	public String saveCustomerAction(@Valid Customer customer, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			logger.info("Returning custSave.jsp page");
 			return "custSave";
@@ -47,5 +44,4 @@ public class CustomerController {
 		customers.put(customer.getEmail(), customer);
 		return "custSaveSuccess";
 	}
-
 }
