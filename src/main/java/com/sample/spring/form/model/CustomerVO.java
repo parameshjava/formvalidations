@@ -15,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.sample.spring.form.validator.Password;
 import com.sample.spring.form.validator.Phone;
 
-public class Customer {
+public class CustomerVO {
 
 	@Size(min=2, max=30) 
     private String name;

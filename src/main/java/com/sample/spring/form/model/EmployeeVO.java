@@ -1,6 +1,6 @@
 package com.sample.spring.form.model;
 
-public class Employee {
+public class EmployeeVO {
 
 	private int id;
 	private String name;

@@ -11,11 +11,11 @@
 	Customer Saved Successfully.
 </h3>
 
-<strong>Customer Name:${customer.name}</strong><br>
-<strong>Customer Email:${customer.email}</strong><br>
-<strong>Customer Age:${customer.age}</strong><br>
-<strong>Customer Gender:${customer.gender}</strong><br>
-<strong>Customer Birthday:<fmt:formatDate value="${customer.birthday}" type="date" /></strong><br>
+<strong>Customer Name:${customerVO.name}</strong><br>
+<strong>Customer Email:${customerVO.email}</strong><br>
+<strong>Customer Age:${customerVO.age}</strong><br>
+<strong>Customer Gender:${customerVO.gender}</strong><br>
+<strong>Customer Birthday:<fmt:formatDate value="${customerVO.birthday}" type="date" /></strong><br>
 
 </body>
 </html>

@@ -18,15 +18,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sample.spring.form.model.Employee;
+import com.sample.spring.form.model.EmployeeVO;
 
 @Controller
 public class EmployeeController {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(EmployeeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
-	private Map<Integer, Employee> emps = null;
+	private Map<Integer, EmployeeVO> emps = null;
 
 	@Autowired
 	@Qualifier("employeeValidator")
@@ -38,13 +37,13 @@ public class EmployeeController {
 	}
 
 	public EmployeeController() {
-		emps = new HashMap<Integer, Employee>();
+		emps = new HashMap<Integer, EmployeeVO>();
 	}
 
 	@ModelAttribute("employee")
-	public Employee createEmployeeModel() {
+	public EmployeeVO createEmployeeModel() {
 		// ModelAttribute value should be same as used in the empSave.jsp
-		return new Employee();
+		return new EmployeeVO();
 	}
 
 	@RequestMapping(value = "/emp/save", method = RequestMethod.GET)
@@ -54,16 +53,15 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/emp/save.do", method = RequestMethod.POST)
-	public String saveEmployeeAction(
-			@ModelAttribute("employee") @Validated Employee employee,
+	public String saveEmployeeAction(@ModelAttribute("employeeVO") @Validated EmployeeVO employeeVO,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			logger.info("Returning empSave.jsp page");
 			return "empSave";
 		}
 		logger.info("Returning empSaveSuccess.jsp page");
-		model.addAttribute("emp", employee);
-		emps.put(employee.getId(), employee);
+		model.addAttribute("employeeVO", employeeVO);
+		emps.put(employeeVO.getId(), employeeVO);
 		return "empSaveSuccess";
 	}
 }
