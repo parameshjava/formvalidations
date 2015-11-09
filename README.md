@@ -1,4 +1,7 @@
 # formvalidations
+
+[![Build status](https://travis-ci.org/parameshjava/formvalidations.svg?branch=master)](https://travis-ci.org/parameshjava/formvalidations)
+
 Form validations in spring framework
 
 Form validations in spring framework by using Hibernate validator <br />
