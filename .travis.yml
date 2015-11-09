@@ -4,7 +4,7 @@ jdk:
 
 env:
   global:
-  - GH_REF: github.com/iluwatar/java-design-patterns.git
+  - GH_REF: git@github.com:parameshjava/formvalidations.git
 
 before_install:
 - export DISPLAY=:99.0
